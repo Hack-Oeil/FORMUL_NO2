@@ -3,7 +3,7 @@
 ## Présentation du CTF 
 **ID** 45 dans **les CTFs de Cyrhades**
 
-Vous devrez exploiter une injection de commande pour trouver le flag.
+Vous devrez prouvez que vos maitrisez la manipulation de formulaire.
 
 
 ## Aperçu
