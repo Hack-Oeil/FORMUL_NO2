@@ -1,0 +1,111 @@
+{% extends 'web/layout.html.twig' %}
+
+{% block content %}
+  <div class="container">
+    <h3>Le Formul-NO2</h3>
+    {% if errors %} 
+    <ul class="error">
+      {% for error in errors %}
+        <li> {{error}} </li>
+      {% endfor %}
+    </ul>
+    {% elseif flag %} 
+    <div class="success">
+      {{ flag }}
+    </div>
+    {% endif %}
+    <strong>Prouvez que vous avez compris qu'un formulaire client n'a aucun interet en sécurité et n'est qu'un confort pour l'utilisateur.</strong>
+    
+    <p>
+      Vous devez soumettre le formulaire :<br/>
+        - Soumettre le formulaire avec une autre valeur que 42 pour la variable id dans la chaine de requête.<br/>
+        - Modifier la valeur du champ secret.<br/>
+        - Puis suivez les différentes consignes sur chacun des champs.
+    </p>
+    <hr>
+    <form method="post">      
+      <input type="hidden" name="secret" value="8" class="form-control" required>
+      <div class="mb-3 row">
+        <div class="col-6">
+          <label class="form-label" for="number_1">Nombre supérieur à 10 (champ 1)</label>
+          <input type="number" id="number_1" name="number_1" max="10" class="form-control" required>
+          <div class="form-text">Envoyer un nombre supérieur à 10</div>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="number_2">Une chaine de caractères (champ 2)</label>
+          <input type="number" id="number_2" name="number_2" max="10" class="form-control" required>
+          <div class="form-text">Envoyer une chaine de caractères</div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-6">
+          <label class="form-label" for="email">Pas d'email (champ 3)</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+          <div class="form-text">Envoyer autre chose qu'un email</div>
+        </div>
+      </div>
+
+
+      <div class="mb-3 row">
+        <div class="col-6">
+          <label class="form-label" for="date_1">Date trop lointaine (champ 4)</label>
+          <input type="date" id="date_1" name="date_1" max="2020-12-31" class="form-control" required>
+          <div class="form-text">Envoyer une date plus récente que 2020-12-31</div>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="date_2">Autre chose qu'une date (champ 5)</label>
+          <input type="date" id="date_2" name="date_2" class="form-control" required>
+          <div class="form-text">Envoyer une date plus récente que 2020-12-31</div>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-6">
+          <label class="form-label" for="select_1">Autre chose que les valeurs attendues (champ 6)</label>
+          <select name="select_1" id="select_1" class="form-control" required>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <div class="form-text">Envoyer une autre valeur que celles attendues (champ 7)</div>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="select_2">Autre chose que les valeurs attendues</label>
+          <select name="select_2" id="select_2" class="form-control" required>
+            <option value="1">X</option>
+            <option value="2">Y</option>
+            <option value="3">Z</option>
+          </select>
+          <div class="form-text">Envoyer une autre valeur que celles attendues</div>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-12">
+          <label class="form-label" for="multi_line">Une chaine de caractères sur plusieurs lignes  (champ 8)</label>
+          <input type="text" id="multi_line" name="multi_line" class="form-control" required>
+          <div class="form-text">Envoyer une chaine de caractères multiligne</div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-4">
+          <label class="form-label" for="tab">Un tableau  (champ 9)</label>
+          <input type="text" id="tab" name="tab" class="form-control" required>
+          <div class="form-text">Envoyer un tableau</div>
+        </div>
+        <div class="col-4">
+          <label class="form-label" for="not_need">A ne pas envoyer (champ 10)</label>
+          <input type="text" id="not_need" name="not_need" class="form-control" required>
+          <div class="form-text">Vous ne devez pas envoyer ce champ !</div>
+        </div>
+        <div class="col-4">
+          <label class="form-label" for="need_empty">Envoyer mais vide (champ 11)</label>
+          <input type="text" id="need_empty" name="need_empty" class="form-control" required>
+          <div class="form-text">Vous devez envoyer ce champ mais vide</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Soumettre formulaire</button>
+    </form>
+  </div>
+{% endblock %}
