@@ -42,7 +42,7 @@ class HomeController extends AbstractController
                 $errors[] = 'Vous ne devez pas soumettre le champ 10.';
             }
             if(!(isset($_POST['need_empty']) && empty($_POST['need_empty']))) {
-                $errors[] = 'Vous ne devez pas soumettre le champ 11.';
+                $errors[] = 'Vous devez soumettre le champ 11, mais vide.';
             }
 
             if(sizeof($errors) === 0) {
