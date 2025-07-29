@@ -7,7 +7,7 @@ Vous devrez prouvez que vous maitrisez la manipulation de formulaire.
 
 
 ## Aperçu
-![infos/capture.jpg](infos/capture.jpg)
+![presentation/assets/images/capture.jpg](presentation/assets/images/capture.jpg)
 
 
 -----------
