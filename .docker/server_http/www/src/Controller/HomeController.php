@@ -55,6 +55,6 @@ class HomeController extends AbstractController
             return $this->render('web/home');
         }
         // Dans les autres cas on redirige vers le formulaire avec l'id 42
-        $this->redirectToRoute("/?id=42");
+        $this->redirectToRoute("./?id=42");
     }
 }
